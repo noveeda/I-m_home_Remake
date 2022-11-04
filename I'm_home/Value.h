@@ -1,9 +1,7 @@
-#include <stdio.h>
-
 #define MAP_SIZE	10
 
-typedef enum Object_Type {
-	NONE,
+typedef enum class Object_Type {
+	NONE = 0,
 	STREET,
 	WALL,
 	DRUNKEN,
@@ -12,10 +10,28 @@ typedef enum Object_Type {
 	HOME
 }Object_Type;
 
-#define DEFAULT		7
-#define DARK_GRAY	8
-#define GREEN		10
-#define RED			12
-#define PINK		13
-#define YELLOW		14
-#define WHITE		15
+typedef enum class Direction {
+	UP = 0,
+	DOWN,
+	LEFT,
+	RIGHT
+}Direction;
+
+typedef enum class Colors {
+	BLACK		= 0x0000,
+	DARK_BLUE,
+	GREEN,
+	BLUE_GREEN,
+	BLOOD,
+	PURPLE,
+	GOLD,
+	ORIGINAL,
+	GRAY,
+	BLUE,
+	HIGH_GREEN,
+	SKY_BLUE,
+	RED,
+	PLUM,
+	YELLOW,
+	WHITE,
+}Colors;

@@ -1,6 +1,11 @@
+#include "Value.h"
+
 #include <conio.h>
-#include <stdbool.h>
+#include <stdlib.h>
+#include <time.h>
 #include <Windows.h>
+#include <stdio.h>
+#include <memory.h>
 
 #define CCI CONSOLE_CURSOR_INFO
 

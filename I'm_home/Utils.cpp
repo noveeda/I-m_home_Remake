@@ -1,6 +1,4 @@
-
 #include "Utils.h"
-#include "Value.h"
 
 #pragma warning(disable: 6031 6387)
 
@@ -37,6 +35,10 @@ void DrawChar(int x, int y, char c)
 	SetConsoleTextAttribute(outputHandle, DEFAULT);
 }
 
+/// <summary>
+/// invisible이 true면 비가시화 false면 가시화 한다.
+/// </summary>
+/// <param name="invisible">커서 비가시성 여부</param>
 void CursorSettings(bool invisible)
 {
 	CCI cci;
@@ -45,6 +47,11 @@ void CursorSettings(bool invisible)
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
+/// <summary>
+/// 커서의 크기, 가시성을 설정한다
+/// </summary>
+/// <param name="cursorSize">커서의 사이즈</param>
+/// <param name="invisible">커서 비가시성 여부</param>
 void CursorSettings(int cursorSize, bool invisible)
 {
 	CCI cci;

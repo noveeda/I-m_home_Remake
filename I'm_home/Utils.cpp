@@ -14,25 +14,25 @@ void gotoxy(int x, int y)
 // 설정한 위치에 color 색상의 문자 출력
 void DrawChar(int x, int y, char c)
 {
-	short color = NULL;
-	char ch[3];
-	HANDLE outputHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+	Colors	color;
+	char	ch[3];
+	HANDLE	outputHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	switch (c)
+	switch ((Object_Type)c)
 	{
-	case WALL:		color = WHITE;		strcpy_s(ch, 3, "■"); break;
-	case STREET:	color = DARK_GRAY;	strcpy_s(ch, 3, "□"); break;
-	case DRUNKEN:	color = GREEN;		strcpy_s(ch, 3, "Ｄ"); break;
-	case COP:		color = RED;		strcpy_s(ch, 3, "Ｃ"); break;
-	case PUB:		color = PINK;		strcpy_s(ch, 3, "Ｐ"); break;
-	case HOME:		color = YELLOW;		strcpy_s(ch, 3, "Ｈ"); break;
+		case Object_Type::WALL:		color = Colors::WHITE;		strcpy_s(ch, 3, "■");  break;
+		case Object_Type::STREET:	color = Colors::ORIGINAL;	strcpy_s(ch, 3, "□");  break;
+		case Object_Type::DRUNKEN:	color = Colors::GREEN;		strcpy_s(ch, 3, "Ｄ"); break;
+		case Object_Type::COP:		color = Colors::RED;		strcpy_s(ch, 3, "Ｃ"); break;
+		case Object_Type::PUB:		color = Colors::PLUM;		strcpy_s(ch, 3, "Ｐ"); break;
+		case Object_Type::HOME:		color = Colors::YELLOW;		strcpy_s(ch, 3, "Ｈ"); break;
 	}
 
 	
 	gotoxy(x, y);
-	SetConsoleTextAttribute(outputHandle, color);
+	SetConsoleTextAttribute(outputHandle, (WORD)color);
 	printf("%s", ch);
-	SetConsoleTextAttribute(outputHandle, DEFAULT);
+	SetConsoleTextAttribute(outputHandle, (WORD)Colors::ORIGINAL);
 }
 
 /// <summary>

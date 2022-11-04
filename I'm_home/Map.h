@@ -16,3 +16,5 @@ static char front_map[MAP_SIZE][MAP_SIZE];
 
 
 void InitMap();
+void UpdateMap();
+void RenderMap(char map[MAP_SIZE][MAP_SIZE], char front_map[MAP_SIZE][MAP_SIZE]);

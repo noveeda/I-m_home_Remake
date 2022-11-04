@@ -1,3 +1,4 @@
+#pragma once
 #define MAP_SIZE	10
 
 typedef enum class Object_Type {
@@ -18,20 +19,20 @@ typedef enum class Direction {
 }Direction;
 
 typedef enum class Colors {
-	BLACK		= 0x0000,
-	DARK_BLUE,
-	GREEN,
-	BLUE_GREEN,
-	BLOOD,
-	PURPLE,
-	GOLD,
-	ORIGINAL,
-	GRAY,
-	BLUE,
-	HIGH_GREEN,
-	SKY_BLUE,
-	RED,
-	PLUM,
-	YELLOW,
-	WHITE,
+	BLACK		,
+	DARK_BLUE	,
+	GREEN		,
+	BLUE_GREEN	,
+	BLOOD		,
+	PURPLE		,
+	GOLD		,
+	ORIGINAL	,
+	GRAY		,
+	BLUE		,
+	HIGH_GREEN	,
+	SKY_BLUE	,
+	RED			,
+	PLUM		,
+	YELLOW		,
+	WHITE	
 }Colors;

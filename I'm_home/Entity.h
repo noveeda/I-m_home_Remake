@@ -1,6 +1,7 @@
 #include "Utils.h"
 
 typedef struct Entity {
+	Object_Type entity_type;
 	int x;
 	int y;
 
@@ -18,4 +19,6 @@ typedef struct Entity {
 	}
 }Entity;
 
-void Move(Entity& entity, char map[MAP_SIZE][MAP_SIZE], bool isAuto);
+Entity GenerateEntity(int quad, Object_Type obj_type);
+
+void Move(Entity& entity, bool isAuto);

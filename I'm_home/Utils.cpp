@@ -14,7 +14,7 @@ void gotoxy(int x, int y)
 // 설정한 위치에 color 색상의 문자 출력
 void DrawChar(int x, int y, char c)
 {
-	Colors	color;
+	Colors	color = Colors::ORIGINAL;
 	char	ch[3];
 	HANDLE	outputHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 

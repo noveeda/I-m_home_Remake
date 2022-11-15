@@ -131,9 +131,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Value.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Value.h" />

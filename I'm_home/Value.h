@@ -1,9 +1,10 @@
 #pragma once
 
-#include <Windows.h>
-
 #define MAP_SIZE	10
-#define CCI CONSOLE_CURSOR_INFO
+
+extern char map[MAP_SIZE][MAP_SIZE];
+
+extern char front_map[MAP_SIZE][MAP_SIZE];
 
 typedef enum class Object_Type {
 	NONE = 0,
@@ -40,3 +41,4 @@ typedef enum class Colors {
 	YELLOW		,
 	WHITE	
 }Colors;
+

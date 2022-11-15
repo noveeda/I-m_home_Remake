@@ -1,4 +1,36 @@
 #include "Entity.h"
+extern char map[MAP_SIZE][MAP_SIZE];
+Entity GenerateEntity(int quad, Object_Type obj_type)
+{
+    Entity entity;
+    int x, y;
+
+    while (true) {
+        // quad  x    y
+        // 1:   0~4, 0~4
+        // 2:   5~9, 0~4
+        // 3:   0~4, 5~9
+        // 4:   5~9, 5~9
+
+        if (quad % 2) { // quad: 1, 3
+            x = rand() % 5;
+            y = (quad / 2 == 0) ? rand() % 5 : rand() % 5 + 5;
+        }
+        else { // quad: 2, 4
+            x = rand() % 5 + 5;
+            y = (quad / 2 == 1) ? rand() % 5 : rand() % 5 + 5;
+        }
+
+        if (map[y][x] == (char)Object_Type::STREET) break;
+    }
+    
+    entity.x = x;
+    entity.y = y;
+    entity.entity_type = obj_type;
+
+    map[y][x] = (char)entity.entity_type;
+    return entity;
+}
 
 /// <summary>
 /// 엔티티를 이동시키는 함수. isAuto의 value에 따라 자동, 수동 이동이 정해짐.
@@ -6,7 +38,7 @@
 /// <param name="entity">움직일 엔티티</param>
 /// <param name="map">엔티티가 있는 맵</param>
 /// <param name="isAuto">오토모드 여부</param>
-void Move(Entity &entity, char map[MAP_SIZE][MAP_SIZE], bool isAuto)
+void Move(Entity &entity, bool isAuto)
 {
     COORD     moveDir   = {0, 0}; // Vector2.zero
     
@@ -26,7 +58,10 @@ void Move(Entity &entity, char map[MAP_SIZE][MAP_SIZE], bool isAuto)
             // 이동 방향으로 이동 가능 여부 판단
             if (map[entity.y + moveDir.Y][entity.x + moveDir.X] == (int)Object_Type::STREET) {
                 // 엔티티 이동
+                map[entity.y][entity.x] = (char)Object_Type::STREET;
                 entity += moveDir;
+
+                map[entity.y][entity.x] = (char)entity.entity_type;
                 break;
             }
         }

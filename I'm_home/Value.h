@@ -1,5 +1,9 @@
 #pragma once
+
+#include <Windows.h>
+
 #define MAP_SIZE	10
+#define CCI CONSOLE_CURSOR_INFO
 
 typedef enum class Object_Type {
 	NONE = 0,

@@ -7,17 +7,15 @@ typedef struct Entity {
 	void operator = (COORD pos) {
 		x = pos.X;
 		y = pos.Y;
-	};
-
+	}
 	void operator += (COORD pos) {
 		x += pos.X;
 		y += pos.Y;
 	}
-
 	void operator -= (COORD pos) {
 		x -= pos.X;
 		y -= pos.Y;
 	}
 }Entity;
 
-bool Move(char map[MAP_SIZE]);
+void Move(Entity& entity, char map[MAP_SIZE][MAP_SIZE], bool isAuto);
